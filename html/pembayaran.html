@@ -1,0 +1,158 @@
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran</title>
+    <style>
+        body {
+            background-color: #ddd;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #0288d1;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        button {
+            background-color: #0288d1;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #0277bd;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #0288d1;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Form Pembayaran</h1>
+    </header>
+    <div class="container">
+        <h2>Detail Pembelian</h2>
+        <form id="pembayaranForm">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+
+            <label for="alamat">Alamat Pengiriman</label>
+            <input id="alamat" name="alamat" placeholder="Masukkan alamat lengkap Anda" rows="4" required></input>
+
+            <label for="pengiriman">Jasa Pengiriman</label>
+            <select id="pengiriman" name="pengiriman" required>
+                <option value="JnT">JnT</option>
+                <option value="JnE">JnE</option>
+            </select>
+
+
+            <label for="telepon">Nomor Telepon</label>
+            <input type="tel" id="telepon" name="telepon" placeholder="Masukkan nomor telepon Anda" required>
+
+            <label for="produk">Produk yang Dibeli</label>
+            <select id="produk" name="produk" required>
+                <option value="Sepeda Gunung - Rp 3.500.000">Sepeda Gunung - Rp 3.500.000</option>
+                <option value="Sepeda Balap - Rp 4.800.000">Sepeda Balap - Rp 4.800.000</option>
+                <option value="Sepeda Lipat - Rp 2.700.000">Sepeda Lipat - Rp 2.700.000</option>
+            </select>
+
+            <label for="metode-pembayaran">Metode Pembayaran</label>
+            <select id="metode-pembayaran" name="metode-pembayaran" required>
+                <option value="Transfer Bank">Transfer Bank</option>
+                <option value="Kartu Kredit">Kartu Kredit</option>
+                <option value="E-Wallet">E-Wallet</option>
+                <option value="COD">Bayar di Tempat (COD)</option>
+            </select>
+
+            <button type="button" onclick="simpanData()">Konfirmasi Pembelian</button>
+        </form>
+        <a href="sepeda.html" class="back-link">Kembali ke Beranda</a>
+    </div>
+    <footer>
+        <p>&copy; 2024 Toko Sepeda Online. Semua Hak Dilindungi.</p>
+    </footer>
+
+    <script>
+        function simpanData() {
+            // Ambil data dari form
+            const nama = document.getElementById('nama').value;
+            const alamat = document.getElementById('alamat').value;
+            const pengiriman = document.getElementById('pengiriman').value;
+            const telepon = document.getElementById('telepon').value;
+            const produk = document.getElementById('produk').value;
+            const metode = document.getElementById('metode-pembayaran').value;
+
+            // Simpan ke localStorage
+            localStorage.setItem('nama', nama);
+            localStorage.setItem('alamat', alamat);
+            localStorage.setItem('pengiriman',pengiriman);
+            localStorage.setItem('telepon', telepon);
+            localStorage.setItem('produk', produk);
+            localStorage.setItem('metode', metode);
+
+            // Pindah ke halaman konfirmasi
+            window.location.href = 'proses-pembayaran.html';
+        }
+    </script>
+</body>
+</html>

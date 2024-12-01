@@ -1,0 +1,106 @@
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konfirmasi Pembelian</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #0288d1;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .details {
+            background-color: #f0f8ff;
+            border-left: 5px solid #0288d1;
+            padding: 15px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .details p {
+            margin: 5px 0;
+            font-size: 0.95rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #0288d1;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #0277bd;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Terima Kasih!</h1>
+        <p>Pesanan Anda telah berhasil kami terima dan sedang diproses. Berikut adalah detail pesanan Anda:</p>
+        
+        <div class="details">
+            <p><strong>Nama:</strong> <span id="nama"></span></p>
+            <p><strong>Alamat:</strong> <span id="alamat"></span></p>
+            <p><strong>Jasa Pengiriman:</strong> <span id="pengiriman"></span></p>
+            <p><strong>Nomor Telepon:</strong> <span id="telepon"></span></p>
+            <p><strong>Produk:</strong> <span id="produk"></span></p>
+            <p><strong>Metode Pembayaran:</strong> <span id="metode"></span></p>
+        </div>
+
+        <p>Tim kami akan segera menghubungi Anda untuk konfirmasi lebih lanjut. Pastikan nomor telepon Anda aktif!</p>
+
+        <a href="sepeda.html" class="btn">Kembali ke Beranda</a>
+    </div>
+    <footer>
+        <p>&copy; 2024 Toko Sepeda Online. Semua Hak Dilindungi.</p>
+    </footer>
+
+    <script>
+        // Ambil data dari localStorage
+        document.getElementById('nama').innerText = localStorage.getItem('nama');
+        document.getElementById('alamat').innerText = localStorage.getItem('alamat');
+        document.getElementById('pengiriman').innerText = localStorage.getItem('pengiriman')
+        document.getElementById('telepon').innerText = localStorage.getItem('telepon');
+        document.getElementById('produk').innerText = localStorage.getItem('produk');
+        document.getElementById('metode').innerText = localStorage.getItem('metode');
+    </script>
+</body>
+</html>
